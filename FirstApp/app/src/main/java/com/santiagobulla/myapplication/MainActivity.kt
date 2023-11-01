@@ -1,5 +1,6 @@
 package com.santiagobulla.myapplication
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -16,7 +17,12 @@ class MainActivity : AppCompatActivity() {
 
         buttonSaludar.setOnClickListener {
             var nameValue = editTextName.text.toString()
-            Toast.makeText(this,"Bienvenido $nameValue a mi primera app",Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Bienvenido $nameValue a mi primera app", Toast.LENGTH_LONG)
+                .show()//hacer un pop up
+            val intento =
+                Intent(this, Calculadora::class.java)//declarar la redireccion de activities
+            startActivity(intento)//ejecutar la redireccion
+
         }
     }
 }
