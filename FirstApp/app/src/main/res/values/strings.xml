@@ -74,4 +74,5 @@
     <string name="tu_banco_amigo">¡Tu banco amigo!</string>
     <string name="fibonacci">Fibonacci</string>
     <string name="calculadora">Calculadora</string>
+    <string name="resultado">Resultado</string>
 </resources>

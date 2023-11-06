@@ -24,7 +24,8 @@ class Menu : AppCompatActivity() {
             Toast.makeText(this, "banco", Toast.LENGTH_SHORT).show()
         }
         btnImageFibonacci.setOnClickListener {
-            Toast.makeText(this, "fibo", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, Fibonacci::class.java)
+            startActivity(intent)
         }
         btnImageCalculadora.setOnClickListener {
             val intent = Intent(this, Calculadora::class.java)
