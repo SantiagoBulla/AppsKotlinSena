@@ -21,7 +21,8 @@ class Menu : AppCompatActivity() {
             startActivity(intent)
         }
         btnImagebanco.setOnClickListener {
-            Toast.makeText(this, "banco", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, Banco::class.java)
+            startActivity(intent)
         }
         btnImageFibonacci.setOnClickListener {
             val intent = Intent(this, Fibonacci::class.java)
