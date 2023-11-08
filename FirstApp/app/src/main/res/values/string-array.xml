@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="opciones_array_calculadora">
+        <item>suma</item>
+        <item>resta</item>
+        <item>division</item>
+        <item>multiplicacion</item>
+        <item>modulo</item>
+    </string-array>
+</resources>

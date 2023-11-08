@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
                 val intento = Intent(this, Menu::class.java)//declarar la redireccion de activities
                 startActivity(intento)
             } else {
-                Toast.makeText(this, "Wrong", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Datos de ingreso incorrectos", Toast.LENGTH_LONG).show()
             }
         }
     }
