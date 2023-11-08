@@ -51,14 +51,6 @@
         app:srcCompat="@drawable/picture1"
         tools:layout_editor_absoluteX="-9dp" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="429dp"
-        android:layout_height="536dp"
-        android:layout_marginBottom="416dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:srcCompat="@drawable/picture1"
-        tools:layout_editor_absoluteX="-9dp" />
 
     <TextView
         android:id="@+id/textView2"
