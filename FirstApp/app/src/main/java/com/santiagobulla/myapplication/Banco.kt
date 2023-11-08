@@ -25,6 +25,7 @@ class Banco : AppCompatActivity() {
         val valorRetiro = findViewById<EditText>(R.id.editTextNumRetirar)
 
         btnVolver.setOnClickListener {
+            jose.saldoCuenta = this.consultarSaldo()
             val intent = Intent(this, Menu::class.java)
             startActivity(intent)
             Toast.makeText(this, "Su saldo final en cuenta es: ${this.estadoCuenta()}", Toast.LENGTH_SHORT).show()

@@ -42,62 +42,72 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.9" />
 
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="429dp"
+        android:layout_height="536dp"
+        android:layout_marginBottom="416dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:srcCompat="@drawable/picture1"
+        tools:layout_editor_absoluteX="-9dp" />
+
     <TextView
         android:id="@+id/textView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="301dp"
+        android:layout_height="108dp"
         android:fontFamily="monospace"
         android:text="BIENVENIDO A SU BANCO"
-        android:textColor="#FF5722"
-        android:textSize="24sp"
+        android:textColor="#ffffff"
+        android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.236"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.815" />
+        app:layout_constraintVertical_bias="0.6" />
 
     <Button
         android:id="@+id/buttonBancoVolver"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#E3675E"
+        android:backgroundTint="#FFFFFF"
         android:text="Volver"
+        android:textColor="#e6983e"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintHorizontal_bias="0.139"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.871"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.163" />
+        app:layout_constraintVertical_bias="0.123" />
 
     <Button
         android:id="@+id/buttonConsignar"
         android:layout_width="135dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="#E3675E"
+        android:backgroundTint="#e6983e"
         android:fontFamily="monospace"
         android:text="Consignar"
-        app:layout_constraintBottom_toTopOf="@+id/guideline5"
+        app:layout_constraintBottom_toTopOf="@+id/guideline7"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.877"
+        app:layout_constraintHorizontal_bias="0.942"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2"
-        app:layout_constraintVertical_bias="0.878" />
+        app:layout_constraintTop_toTopOf="@+id/guideline6"
+        app:layout_constraintVertical_bias="0.397" />
 
     <EditText
         android:id="@+id/editTextNumConsignar"
-        android:layout_width="347dp"
-        android:layout_height="53dp"
+        android:layout_width="wrap_content"
+        android:layout_height="52dp"
         android:ems="10"
         android:fontFamily="monospace"
-        android:hint="Ingrese el monto a consignar"
+        android:hint="$10000"
         android:inputType="numberSigned"
-        app:layout_constraintBottom_toTopOf="@+id/guideline5"
+        app:layout_constraintBottom_toTopOf="@+id/guideline7"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.217"
+        app:layout_constraintHorizontal_bias="0.079"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2"
-        app:layout_constraintVertical_bias="0.347" />
+        app:layout_constraintTop_toTopOf="@+id/guideline6"
+        app:layout_constraintVertical_bias="0.407" />
 
     <TextView
         android:id="@+id/textView15"
@@ -106,12 +116,12 @@
         android:layout_marginEnd="264dp"
         android:fontFamily="monospace"
         android:text="¡Consigna!"
-        android:textColor="#FF5722"
+        android:textColor="#329AC7"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/editTextNumConsignar"
-        app:layout_constraintEnd_toEndOf="@+id/editTextNumConsignar"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextNumConsignar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.269"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
         app:layout_constraintVertical_bias="1.0" />
 
@@ -119,29 +129,29 @@
         android:id="@+id/buttonRetirar"
         android:layout_width="135dp"
         android:layout_height="51dp"
-        android:backgroundTint="#E3675E"
+        android:backgroundTint="#329AC7"
         android:text="Retirar"
         app:layout_constraintBottom_toTopOf="@+id/guideline6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.884"
+        app:layout_constraintHorizontal_bias="0.942"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline5"
-        app:layout_constraintVertical_bias="0.846" />
+        app:layout_constraintVertical_bias="0.511" />
 
     <EditText
         android:id="@+id/editTextNumRetirar"
-        android:layout_width="347dp"
+        android:layout_width="wrap_content"
         android:layout_height="53dp"
         android:ems="10"
         android:fontFamily="monospace"
-        android:hint="Ingrese el monto a retirar"
+        android:hint="$10000"
         android:inputType="numberSigned"
         app:layout_constraintBottom_toTopOf="@+id/guideline6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.218"
+        app:layout_constraintHorizontal_bias="0.079"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline5"
-        app:layout_constraintVertical_bias="0.29" />
+        app:layout_constraintVertical_bias="0.52" />
 
     <TextView
         android:id="@+id/textView16"
@@ -150,7 +160,7 @@
         android:layout_marginTop="8dp"
         android:fontFamily="monospace"
         android:text="¡Retira!"
-        android:textColor="#FF5722"
+        android:textColor="#e6983e"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/editTextNumRetirar"
         app:layout_constraintEnd_toEndOf="@+id/editTextNumRetirar"
@@ -161,31 +171,32 @@
 
     <Button
         android:id="@+id/buttonConsultarSaldo"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#E3675E"
+        android:layout_width="165dp"
+        android:layout_height="58dp"
+        android:backgroundTint="#e6983e"
         android:text="¡Consulta tu saldo!"
-        app:layout_constraintBottom_toTopOf="@+id/guideline7"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.934"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline6"
-        app:layout_constraintVertical_bias="0.196" />
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:layout_constraintVertical_bias="0.643" />
 
     <TextView
         android:id="@+id/textViewSaldoCuenta"
-        android:layout_width="380dp"
-        android:layout_height="68dp"
+        android:layout_width="152dp"
+        android:layout_height="153dp"
         android:fontFamily="monospace"
-        android:text="Saldo en cuenta"
-        android:textColor="#FF5722"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline7"
+        android:padding="5dp"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintHorizontal_bias="0.064"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline6"
-        app:layout_constraintVertical_bias="0.897" />
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:layout_constraintVertical_bias="0.22"
+        tools:text="Saldo en cuenta" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
