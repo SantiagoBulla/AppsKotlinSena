@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
+import android.widget.Toast
 
 class Calculadora : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,11 +22,37 @@ class Calculadora : AppCompatActivity() {
         val btnVolver = findViewById<Button>(R.id.buttonVolverCal)
 
         btnCalcular.setOnClickListener {
-            val numero1 = num1.text.toString().toDouble()
-            val numero2 = num2.text.toString().toDouble()
-            val operacion = spinner.selectedItem.toString()
+            val number1 = num1.text.toString()
+            val number2 = num2.text.toString()
 
-            val resultado = when (operacion) {
+            if (number1.isNotEmpty() && number2.isNotEmpty()) {
+                try {
+                    val resultado = calcularResultado(number1.toDoubleOrNull(), number2.toDoubleOrNull(), spinner.selectedItem.toString())
+                    if (resultado != null) {
+                        txtResultado.text = "El resultado es: $resultado"
+                        num1.text.clear()
+                        num2.text.clear()
+                    } else {
+                        Toast.makeText(this, "Ingrese valores numéricos válidos para el cálculo", Toast.LENGTH_LONG).show()
+                    }
+                } catch (e: IllegalArgumentException) {
+                    Toast.makeText(this, e.message, Toast.LENGTH_LONG).show()
+                }
+            } else {
+                Toast.makeText(this, "Todos los campos son obligatorios", Toast.LENGTH_LONG).show()
+            }
+        }
+
+
+        btnVolver.setOnClickListener {
+            val intent = Intent(this, Menu::class.java)
+            startActivity(intent)
+        }
+    }
+
+    fun calcularResultado(numero1: Double?, numero2: Double?, operacion: String): Double? {
+        if (numero1 != null && numero2 != null && numero1 > 0 && numero2 > 0) {
+            return when (operacion) {
                 "suma" -> numero1 + numero2
                 "resta" -> numero1 - numero2
                 "multiplicacion" -> numero1 * numero2
@@ -33,13 +60,7 @@ class Calculadora : AppCompatActivity() {
                 "modulo" -> numero1 % numero2
                 else -> throw IllegalArgumentException("Operación no válida")
             }
-
-            txtResultado.text = "El resultado es: $resultado"
         }
-
-        btnVolver.setOnClickListener {
-            val intent = Intent(this, Menu::class.java)
-            startActivity(intent)
-        }
+        return null
     }
 }

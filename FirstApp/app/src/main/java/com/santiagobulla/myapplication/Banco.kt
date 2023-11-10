@@ -36,21 +36,48 @@ class Banco : AppCompatActivity() {
         }
 
         btnConsignar.setOnClickListener {
-            val dinero = valorConsignacion.text.toString().toFloat()
-            this.consignar(dinero)
-            Toast.makeText(this, "Consignacion exitosa", Toast.LENGTH_SHORT).show()
-            valorConsignacion.text.clear()
+            val valorConsignacionStr = valorConsignacion.text.toString()
+            if (valorConsignacionStr.isNotEmpty()) {
+                try {
+                    val dinero = valorConsignacionStr.toFloat()
+                    if (dinero > 0) {
+                        consignar(dinero)
+                        Toast.makeText(this, "Consignación exitosa", Toast.LENGTH_SHORT).show()
+                        valorConsignacion.text.clear()
+                    } else {
+                        Toast.makeText(this, "Ingrese un valor válido para la consignación", Toast.LENGTH_SHORT).show()
+                    }
+                } catch (e: NumberFormatException) {
+                    Toast.makeText(this, "Ingrese un valor numérico válido para la consignación", Toast.LENGTH_SHORT).show()
+                }
+            } else {
+                Toast.makeText(this, "Por favor, ingrese un valor para la consignación", Toast.LENGTH_SHORT).show()
+            }
         }
 
         btnRetirar.setOnClickListener {
-            val dinero = valorRetiro.text.toString().toFloat()
-            val rta = this.retirar(dinero)
-            if (rta){
-                Toast.makeText(this, "Retiro exitoso", Toast.LENGTH_SHORT).show()
-            }else{
-                Toast.makeText(this, "Retiro invalido, la cantidad de dinero supera el monto en cuenta", Toast.LENGTH_SHORT).show()
+            val valorRetiroStr = valorRetiro.text.toString()
+
+            if (valorRetiroStr.isNotEmpty()) {
+                try {
+                    val dinero = valorRetiroStr.toFloat()
+                    if (dinero > 0) {
+                        val rta = retirar(dinero)
+                        if (rta) {
+                            Toast.makeText(this, "Retiro exitoso", Toast.LENGTH_SHORT).show()
+                        } else {
+                            Toast.makeText(this, "Retiro inválido, la cantidad de dinero supera el monto en cuenta", Toast.LENGTH_SHORT).show()
+                        }
+                        valorRetiro.text.clear()
+                    } else {
+                        Toast.makeText(this, "Ingrese un valor válido para el retiro", Toast.LENGTH_SHORT).show()
+                    }
+                } catch (e: NumberFormatException) {
+                    Toast.makeText(this, "Ingrese un valor numérico válido para el retiro", Toast.LENGTH_SHORT).show()
+                }
+            } else {
+                Toast.makeText(this, "Por favor, ingrese un valor para el retiro", Toast.LENGTH_SHORT).show()
             }
-            valorConsignacion.text.clear()
         }
 
     }
